@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import Home from './pages/home/Home';
+import Health from './pages/health/Health';
+import Politics from './pages/politics/Politics';
+import Technology from './pages/technology/Technology';
+import World from './pages/world/World';
+import NotFound from './pages/notFound/NotFound';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Route path='*' element={<NotFound /> } />
+        <Route path='/' element={<Home />} />
+        <Route path='/health' element={<Health />} />
+        <Route path='politics' element={<Politics /> } />
+        <Route path='technology' element={<Technology /> } />
+        <Router path='world' element={<World /> } />
+      </BrowserRouter>
+
     </div>
   );
 }
