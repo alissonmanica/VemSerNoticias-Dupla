@@ -1,28 +1,35 @@
 import React, { useEffect } from 'react'
 import { useContext } from 'react'
 import { GetContext } from '../../context/GetContext'
+import moment from 'moment'
 
 function Home() {
-  const {getNews} = useContext(GetContext)
+  const {getNews, news} = useContext(GetContext)
+  let id = 0;
+  let array = []
+ 
  
 
   useEffect(() =>{
     
     getNews('home')
+    
+    
   }, [])
 
 
   return (
-    <div> {pessoas.map((pessoa) =>(
-      <div key={pessoa.idPessoa} className={styles.usuarios}>
-          <h3>{pessoa.nome}</h3>
-          <p>Email: {pessoa.email}</p>
-          <p>Data de nascimento: {moment().format('DD/MM/YYYY', pessoa.dataNascimento)}</p>
-          <p>CPF: {maskCpf(pessoa.cpf)}</p>
-          <div className={styles.containerBotoes}>
-              <div><button onClick={ () => setupDeletar(pessoa.idPessoa)}>Deletar</button></div>
-              <div><button onClick={() => navigate(`/create-user/${pessoa.idPessoa}`)}>Atualizar</button></div>
-          </div>
+    <div> 
+      {news.map((e) =>(
+      <div key={e.published_date}>
+          <h3>{e.title}</h3>
+          {array.push(e.multimedia)}
+          {console.log(array, "aqui deus")}
+          {/* <img src={array.find(ee=> ee.url !== undefined)} />
+          {array.shift()} */}
+          <p>Data de Publicação: {moment().format('DD/MM/YYYY', e.published_date)}</p>
+          <p>Escrito por: {e.byline}</p>
+          {/* {array = []} */}
       </div>
 ))}
         </div>)

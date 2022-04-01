@@ -6,6 +6,7 @@ export const GetContext = createContext();
 
 function GetProvider({children}) {
 const [news, setNews] = useState([])
+let array = []
 
 
 
@@ -15,10 +16,13 @@ async function getNews(category) {
     const {results} = data;
     setNews(results);
     console.log(results);
+    const mapear = news.forEach((e) => array.push(e.multimedia))
+    console.log(array)
+    
 }
 
     return (
-    <GetContext.Provider value={{setNews, getNews, news}}>
+    <GetContext.Provider value={{setNews, getNews, news, array}}>
         {children}
     </GetContext.Provider>
     )
