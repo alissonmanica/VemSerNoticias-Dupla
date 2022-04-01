@@ -11,12 +11,14 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Route path='*' element={<NotFound /> } />
-        <Route path='/' element={<Home />} />
-        <Route path='/health' element={<Health />} />
-        <Route path='politics' element={<Politics /> } />
-        <Route path='technology' element={<Technology /> } />
-        <Router path='world' element={<World /> } />
+      <Routes>
+          <Route path='*' element={<NotFound /> } />
+          <Route path='/' element={<Home />} />
+          <Route path='/health' element={<Health />} />
+          <Route path='politics' element={<Politics /> } />
+          <Route path='technology' element={<Technology /> } />
+          <Route path='world' element={<World /> } />
+        </Routes>
       </BrowserRouter>
 
     </div>
