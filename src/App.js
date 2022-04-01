@@ -6,11 +6,16 @@ import Politics from './pages/politics/Politics';
 import Technology from './pages/technology/Technology';
 import World from './pages/world/World';
 import NotFound from './pages/notFound/NotFound';
+import Header from './components/header/Header';
+import GetProvider from './context/GetContext';
+
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <GetProvider>
+        <Header />
         <Routes>
           <Route path='*' element={<NotFound /> } />
           <Route path='/' element={<Home />} />
@@ -19,6 +24,7 @@ function App() {
           <Route path='technology' element={<Technology /> } />
           <Route path='world' element={<World /> } />
         </Routes>
+      </GetProvider>
       </BrowserRouter>
 
     </div>

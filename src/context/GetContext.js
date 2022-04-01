@@ -5,11 +5,11 @@ import apiNews from "../apiNews";
 export const GetContext = createContext();
 
 function GetProvider({children}) {
-const [news, setNews] = useState('')
+const [news, setNews] = useState({})
 
-async function getNews() {
-    const {data} = await apiNews.get(`${news}.json?api-key=GuM09ompUMh0VrKAkDEsSOMDzsPVFqos`)
-    console.log(data)
+async function getNews(category) {
+    const {data} = await apiNews.get(`${category}.json?api-key=GuM09ompUMh0VrKAkDEsSOMDzsPVFqos`)
+    
 }
 
     return (
