@@ -9,6 +9,7 @@ const [news, setNews] = useState('')
 
 async function getNews() {
     const {data} = await apiNews.get(`${news}.json?api-key=GuM09ompUMh0VrKAkDEsSOMDzsPVFqos`)
+    console.log(data)
 }
 
     return (
