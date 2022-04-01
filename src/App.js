@@ -14,19 +14,18 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <GetProvider>
-        <Header />
-        <Routes>
-          <Route path='*' element={<NotFound /> } />
-          <Route path='/' element={<Home />} />
-          <Route path='/health' element={<Health />} />
-          <Route path='politics' element={<Politics /> } />
-          <Route path='technology' element={<Technology /> } />
-          <Route path='world' element={<World /> } />
-        </Routes>
-      </GetProvider>
+        <GetProvider>
+          <Header />
+          <Routes>
+            <Route path='*' element={<NotFound /> } />
+            <Route path='/' element={<Home />} />
+            <Route path='/health' element={<Health />} />
+            <Route path='politics' element={<Politics /> } />
+            <Route path='technology' element={<Technology /> } />
+            <Route path='world' element={<World /> } />
+          </Routes>
+        </GetProvider>
       </BrowserRouter>
-
     </div>
   );
 }
