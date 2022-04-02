@@ -6,8 +6,10 @@ import { GetContext } from '../../context/GetContext'
 import placeholder from "../../img/placeholder.jpg"
 
 function Home() {
-  const {getNews, news} = useContext(GetContext)
+  const {getNews, news, setPage} = useContext(GetContext)
   const navigate = useNavigate()
+
+  setPage('home')
 
   useEffect(() => {
     getNews('home')

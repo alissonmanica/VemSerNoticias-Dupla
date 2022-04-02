@@ -7,8 +7,10 @@ import { GetContext } from '../../context/GetContext'
 import placeholder from "../../img/placeholder.jpg"
 
 function Health() {
-  const {getNews, news} = useContext(GetContext)
+  const {getNews, news, setPage} = useContext(GetContext)
   const navigate = useNavigate()
+
+  setPage('health')
 
   useEffect(() => {
     getNews('health')

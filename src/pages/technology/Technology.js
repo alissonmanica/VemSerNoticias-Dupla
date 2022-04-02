@@ -6,9 +6,10 @@ import { GetContext } from '../../context/GetContext'
 import placeholder from "../../img/placeholder.jpg"
 
 function Technology() {
-  const {getNews, news} = useContext(GetContext)
+  const {getNews, news, setPage} = useContext(GetContext)
   const navigate = useNavigate()
 
+  setPage('technology')
   useEffect(() => {
     getNews('technology')  
     
@@ -16,7 +17,7 @@ function Technology() {
 
   return (
     <div className='containerNews'> 
-      <h1>World News</h1>
+      <h1>Technology</h1>
         <div className='newsGrid'>
         {news.map((e) =>(
         <div key={e.published_date} className='newsCard'>

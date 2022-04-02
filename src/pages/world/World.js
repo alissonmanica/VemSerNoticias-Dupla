@@ -7,8 +7,10 @@ import placeholder from "../../img/placeholder.jpg"
 // import './World.css'
 
 function World() {
-  const {getNews, news} = useContext(GetContext)
+  const {getNews, news, setPage} = useContext(GetContext)
   const navigate = useNavigate()
+
+  setPage('world')
 
   useEffect(() => {
     getNews('world')
