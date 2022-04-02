@@ -19,7 +19,7 @@ function Home() {
       <h1>Home</h1>
         <div className='newsGrid'>
         {news.map((e) =>(
-        <div key={e.published_date} className='newsCard'>
+        <div key={e.published_date} className='newsCard' onClick={() => navigate(`/details/${e.published_date}`)}>
         <div className='image'>
         <span>{e.section}</span>
         {e.multimedia !== null ? 
