@@ -96,3 +96,6 @@
   color: #ef233c;
   
 }
+.newsCard:hover{
+  cursor: pointer;
+}
