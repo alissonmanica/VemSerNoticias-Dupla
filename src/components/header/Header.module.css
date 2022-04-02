@@ -1,0 +1,28 @@
+header {
+    height: 60px;
+    width: auto;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 15px;
+    align-items: center;
+}
+.menuHeader{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+.menuHeader a{
+    color: gray;
+    text-decoration: none;
+}
+.logo{
+    filter: invert(100%) sepia(3%) saturate(12%) hue-rotate(103deg) brightness(105%) contrast(105%);
+    height: 50px;
+    padding-top: 5px;
+}
+.menuHeader a:hover{
+    cursor: pointer;
+    color: white;
+    font-size: 17px;
+}

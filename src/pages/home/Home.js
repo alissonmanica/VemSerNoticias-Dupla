@@ -13,17 +13,26 @@ function Home() {
   }, [])
 
   return (
-    <div> 
-      {news.map((e) =>(
-      <div key={e.published_date}>
-      <h3>{e.title}</h3>
-      {e.multimedia !== null ? 
-      <img src={e.multimedia[1].url} /> 
-      : <img src={placeholder} />} 
-      <p>Publication date: {moment().format('MM/DD/YYYY', e.published_date)}</p>
-      <p>Written by: {e.byline}</p>
-    </div>
-      ))}
+    <div className='containerNews'> 
+      <h1>Home</h1>
+        <div className='newsGrid'>
+        {news.map((e) =>(
+        <div key={e.published_date} className='newsCard'>
+        <div className='image'>
+        <span>{e.section}</span>
+        {e.multimedia !== null ? 
+        <img src={e.multimedia[1].url} /> 
+        : <img src={placeholder} />} 
+        </div>
+        <div>
+        <h3>{e.title}</h3>
+        
+        <div className='alignText'><p>{e.byline}</p></div>
+        <div className='alignText'><span>Published:</span> <p>{moment(e.published_date, 'YYYY/MM/DD').fromNow()}</p></div>
+        </div>
+        </div>
+       ))}
+      </div>
         </div>)
 }
 
