@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import moment from 'moment'
+import { useNavigate } from 'react-router-dom'
 
 import { GetContext } from '../../context/GetContext'
 import placeholder from "../../img/placeholder.jpg"
@@ -7,6 +8,7 @@ import placeholder from "../../img/placeholder.jpg"
 
 function World() {
   const {getNews, news} = useContext(GetContext)
+  const navigate = useNavigate()
 
   useEffect(() => {
     getNews('world')
@@ -17,7 +19,7 @@ function World() {
       <h1>World</h1>
         <div className='newsGrid'>
         {news.map((e) =>(
-        <div key={e.published_date} className='newsCard'>
+        <div key={e.published_date} className='newsCard' onClick={() => navigate(`/details/${e.published_date}`)}>
         <div className='image'>
         <span>{e.section}</span>
         {e.multimedia !== null ? 

@@ -6,23 +6,26 @@ export const GetContext = createContext();
 
 function GetProvider({children}) {
 const [news, setNews] = useState([])
+const [loading, setLoading] = useState()
 let array = []
 
 
 
-async function getNews(category) {
-
-    const {data} = await apiNews.get(`${category}.json?api-key=1ES0ENwBlE33z8G7aGIzIGoAgVekpGOU`)
-    const {results} = data;
-    setNews(results);
-    console.log(results);
-    const mapear = news.forEach((e) => array.push(e.multimedia))
-    console.log(array)
-    
+async function getNews(url) {
+    try {
+        const {data} = await apiNews.get(`${url}.json?api-key=1ES0ENwBlE33z8G7aGIzIGoAgVekpGOU`)
+        const {results} = data;
+        console.log(results);
+        setNews(data.results);
+        setLoading(false)
+        console.log(news)
+    } catch (error) {
+        console.log(error)
+    }
 }
 
     return (
-    <GetContext.Provider value={{setNews, getNews, news, array}}>
+    <GetContext.Provider value={{setNews, getNews, news, array, loading}}>
         {children}
     </GetContext.Provider>
     )

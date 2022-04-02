@@ -1,12 +1,13 @@
 import React, { useContext, useEffect } from 'react'
 import moment from 'moment'
+import { useNavigate } from 'react-router-dom'
 
 import { GetContext } from '../../context/GetContext'
 import placeholder from "../../img/placeholder.jpg"
 
 function Politics() {
   const {getNews, news} = useContext(GetContext)
-
+  const navigate = useNavigate()
   useEffect(() => {
     getNews('politics')
       
