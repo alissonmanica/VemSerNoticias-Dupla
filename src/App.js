@@ -18,11 +18,11 @@ function App() {
           <Header />
           <Routes>
             <Route path='*' element={<NotFound /> } />
-            <Route path='/' element={<Home />} />
+            <Route exact path='/' element={<Home />} />
             <Route path='/health' element={<Health />} />
-            <Route path='politics' element={<Politics /> } />
-            <Route path='technology' element={<Technology /> } />
-            <Route path='world' element={<World /> } />
+            <Route path='/politics' element={<Politics /> } />
+            <Route path='/technology' element={<Technology /> } />
+            <Route path='/world' element={<World /> } />
           </Routes>
         </GetProvider>
       </BrowserRouter>

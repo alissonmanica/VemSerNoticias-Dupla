@@ -3,32 +3,26 @@ import { GetContext } from '../../context/GetContext'
 import moment from 'moment'
 
 function Home() {
-  const {getNews, news} = useContext(GetContext)
-  let id = 0;
-  let array = []
- 
- 
+  const {getNews, news, setUrlNews, loading} = useContext(GetContext)
+  
 
 
   useEffect(() => {
-    getNews('home')
-    
-    
+    getNews('home') 
   }, [])
 
+  if(loading) {
+    return (<h1>Loading....</h1>)
+  }
 
   return (
     <div> 
       {news.map((e) =>(
       <div key={e.published_date}>
           <h3>{e.title}</h3>
-          {array.push(e.multimedia)}
-          {console.log(array, "aqui deus")}
-          {/* <img src={array.find(ee=> ee.url !== undefined)} />
-          {array.shift()} */}
+          <img src={e.multimedia[1].url} alt="imagem" />
           <p>Data de Publicação: {moment().format('DD/MM/YYYY', e.published_date)}</p>
           <p>Escrito por: {e.byline}</p>
-          {/* {array = []} */}
       </div>
 ))}
         </div>)
