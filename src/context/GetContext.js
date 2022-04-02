@@ -6,7 +6,6 @@ export const GetContext = createContext();
 
 function GetProvider({children}) {
 const [news, setNews] = useState([])
-const [urlNews, setUrlNews] = useState('home')
 const [loading, setLoading] = useState()
 let array = []
 
@@ -26,7 +25,7 @@ async function getNews(url) {
 }
 
     return (
-    <GetContext.Provider value={{setNews, getNews, news, array, setUrlNews, loading, setLoading}}>
+    <GetContext.Provider value={{setNews, getNews, news, array, loading}}>
         {children}
     </GetContext.Provider>
     )

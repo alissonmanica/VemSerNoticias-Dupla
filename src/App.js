@@ -8,6 +8,7 @@ import World from './pages/world/World';
 import NotFound from './pages/notFound/NotFound';
 import Header from './components/header/Header';
 import GetProvider from './context/GetContext';
+import Details from './pages/details/Details';
 
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
             <Route path='/politics' element={<Politics /> } />
             <Route path='/technology' element={<Technology /> } />
             <Route path='/world' element={<World /> } />
+            <Route path='/details' element={<Details />}>
+              <Route path=':id' element={<Details />} />
+            </Route>
           </Routes>
         </GetProvider>
       </BrowserRouter>
