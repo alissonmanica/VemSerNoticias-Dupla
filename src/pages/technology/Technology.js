@@ -4,9 +4,11 @@ import { useNavigate } from 'react-router-dom'
 
 import { GetContext } from '../../context/GetContext'
 import placeholder from "../../img/placeholder.jpg"
+import Loading from '../loading/Loading'
+import Error from '../error/Error'
 
 function Technology() {
-  const {getNews, news, setPage} = useContext(GetContext)
+  const {getNews, news, setPage, loading, error} = useContext(GetContext)
   const navigate = useNavigate()
 
   setPage('technology')
@@ -14,6 +16,15 @@ function Technology() {
     getNews('technology')  
     
   }, [])
+
+  if (loading) {
+    return (<Loading />)
+  }
+
+  if (error) {
+    return (<Error />)
+  }
+
 
   return (
     <div className='containerNews'> 

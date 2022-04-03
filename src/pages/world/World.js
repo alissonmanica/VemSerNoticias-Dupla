@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom'
 
 import { GetContext } from '../../context/GetContext'
 import placeholder from "../../img/placeholder.jpg"
+import Loading from '../loading/Loading'
+import Error from '../error/Error'
 // import './World.css'
 
 function World() {
-  const {getNews, news, setPage} = useContext(GetContext)
+  const {getNews, news, setPage, loading, error} = useContext(GetContext)
   const navigate = useNavigate()
 
   setPage('world')
@@ -15,6 +17,15 @@ function World() {
   useEffect(() => {
     getNews('world')
   }, [])
+
+  if (loading) {
+    return (<Loading />)
+  }
+
+  if (error) {
+    return (<Error />)
+  }
+
 
   return (
     <div className='containerNews'> 

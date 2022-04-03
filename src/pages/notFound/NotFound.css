@@ -1,0 +1,17 @@
+.notFound {
+    min-height: 560px;
+}
+
+.notFound h1 {
+    font-size: 40px;
+}
+.notFound button {
+    border-radius: 4px;
+    padding: 10px;
+    background-color: rgb(50, 173, 50);
+    color: white;
+}
+
+.notFound button:hover {
+    transform: scale(1.1);
+}

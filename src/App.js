@@ -20,7 +20,7 @@ function App() {
           <Header />
           <Routes>
             <Route path='*' element={<NotFound /> } />
-            <Route path='/nyttop' element={<Home />} />
+            <Route exact path='/nyttop' element={<Home />} />
             <Route path='/health' element={<Health />} />
             <Route path='/politics' element={<Politics /> } />
             <Route path='/technology' element={<Technology /> } />

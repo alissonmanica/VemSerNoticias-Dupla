@@ -43,8 +43,6 @@
 
 .newsCard{
   width: 530px;
-  /* border-left: 1px solid black;
-  border-bottom: 1px solid black; */
   box-shadow: -8px 8px 11px -10px #000000;
   padding: 10px;
   height: 200px;
@@ -70,8 +68,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  padding-bottom: 50px;
 }
+
+.containerNews h1 {
+  font-family: 'Times New Roman', Times, serif
+}
+
 .image{
   display: flex;
   flex-direction: column;

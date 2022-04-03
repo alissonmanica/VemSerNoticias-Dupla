@@ -1,0 +1,17 @@
+.error {
+    background: url(../../img/error.jpg);
+    min-height: 570px;
+}
+
+.error h1 {
+    font-size: 60px;
+}
+
+.error button {
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.error button:hover {
+    transform: scale(1.1);
+}

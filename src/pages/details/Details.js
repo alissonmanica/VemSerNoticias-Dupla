@@ -3,20 +3,34 @@ import { useParams } from 'react-router-dom'
 import moment from 'moment'
 import { GetContext } from '../../context/GetContext'
 import placeholder from "../../img/placeholder.jpg"
-
+import './Details.css'
+import Loading from '../loading/Loading'
+import Error from '../error/Error'
 
 function Details() {
-    const {loading, getNews, news} = useContext(GetContext)
+    const {loading, news, setLoading, error} = useContext(GetContext)
     const {id} = useParams()
     console.log(news)
 
     const newsDetails = news.filter(e => e.published_date === id)
 
+    useEffect(() => {
+      setLoading(false)
+    },[])
+
+    if (loading) {
+      return (<Loading />)
+    }
+
+    if (error) {
+      return (<Error />)
+    }
+  
 
   return (
-    <div>
+    <div className={'details'}>
       {newsDetails.map((e) =>(
-    <div>
+    <div className='detailsNews'>
       <h3>{e.title}</h3>
       {e.multimedia !== null ? 
       <img src={e.multimedia[1].url} /> 
