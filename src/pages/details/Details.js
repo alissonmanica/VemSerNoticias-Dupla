@@ -10,8 +10,7 @@ import Error from '../error/Error'
 function Details() {
     const {loading, news, setLoading, error} = useContext(GetContext)
     const {id} = useParams()
-    console.log(news)
-
+    
     const newsDetails = news.filter(e => e.published_date === id)
 
     useEffect(() => {
