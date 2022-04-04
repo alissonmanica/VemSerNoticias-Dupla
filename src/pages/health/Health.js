@@ -12,10 +12,11 @@ function Health() {
   const {getNews, news, setPage, loading, error} = useContext(GetContext)
   const navigate = useNavigate()
 
-  setPage('health')
+  
 
   useEffect(() => {
     getNews('health')
+    setPage('health')
   }, [])
 
   if (loading) {

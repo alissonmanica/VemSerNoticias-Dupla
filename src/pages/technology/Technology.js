@@ -12,9 +12,10 @@ function Technology() {
   const navigate = useNavigate()
   
 
-  setPage('technology')
+  
   useEffect(() => {
     getNews('technology') 
+    setPage('technology')
   }, [])
 
   

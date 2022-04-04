@@ -9,7 +9,7 @@ function GetProvider({children}) {
 const [news, setNews] = useState([]);
 const [loading, setLoading] = useState(true);
 const [error, setError] = useState(false)
-const [page, setPage] = useState();
+const [page, setPage] = useState('');
 
 
 

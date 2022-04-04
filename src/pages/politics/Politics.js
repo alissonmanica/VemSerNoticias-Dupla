@@ -11,10 +11,10 @@ function Politics() {
   const {getNews, news, setPage, loading, error} = useContext(GetContext)
   const navigate = useNavigate()
 
-  setPage('politics');
+  
   useEffect(() => {
     getNews('politics')
-      
+    setPage('politics');
   }, [])
 
   if (loading) {

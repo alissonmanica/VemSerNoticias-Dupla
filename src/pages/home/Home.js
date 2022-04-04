@@ -11,11 +11,11 @@ function Home() {
   const {getNews, news, setPage, loading, error} = useContext(GetContext)
   const navigate = useNavigate()
 
-  setPage('home')
+  
 
   useEffect(() => {
     getNews('home')
-    
+    setPage('home')
   }, [])
 
   if (loading) {
