@@ -32,11 +32,11 @@ function World() {
       <h1>World</h1>
         <div className='newsGrid'>
         {news.map((e) =>(
-        <div key={e.published_date} className='newsCard'>
+        <div key={e.title} className='newsCard'>
         <div className='image'>
         <span>{e.section}</span>
         {e.multimedia !== null ? 
-        <img src={e.multimedia[1].url} onClick={() => navigate(`/details/${e.published_date}`)}/> 
+        <img src={e.multimedia[1].url} onClick={() => navigate(`/details/${e.title}`)}/> 
         : <img src={placeholder} />} 
         </div>
         <div>

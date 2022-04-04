@@ -30,15 +30,15 @@ function Politics() {
       <h1>Politics</h1>
         <div className='newsGrid'>
         {news.map((e) =>(
-        <div key={e.published_date} className='newsCard'>
+        <div key={e.title} className='newsCard'>
         <div className='image'>
         <span>{e.section}</span>
         {e.multimedia !== null ? 
-        <img src={e.multimedia[1].url} onClick={() => navigate(`/details/${e.published_date}`)}/> 
+        <img src={e.multimedia[1].url} onClick={() => navigate(`/details/${e.title}`)}/> 
         : <img src={placeholder} />} 
         </div>
         <div>
-        <h3 onClick={() => navigate(`/details/${e.published_date}`)}>{e.title}</h3>
+        <h3 onClick={() => navigate(`/details/${e.title}`)}>{e.title}</h3>
         
         <div className='alignText'><p>{e.byline}</p></div>
         <div className='alignText'><span>Published:</span> <p>{moment(e.published_date, 'YYYY/MM/DD').fromNow()}</p></div>

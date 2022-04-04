@@ -11,7 +11,7 @@ function Details() {
     const {loading, news, setLoading, error} = useContext(GetContext)
     const {id} = useParams()
     
-    const newsDetails = news.filter(e => e.published_date === id)
+    const newsDetails = news.filter(e => e.title === id)
 
     useEffect(() => {
       setLoading(false)
@@ -29,7 +29,7 @@ function Details() {
   return (
     <div className={'details'}>
       {newsDetails.map((e) =>(
-    <div className='detailsNews'>
+    <div className='detailsNews' key={e.title}>
       <h3>{e.title}</h3>
       {e.multimedia !== null ? 
       <img src={e.multimedia[1].url} /> 
