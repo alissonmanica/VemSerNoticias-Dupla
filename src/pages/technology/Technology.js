@@ -10,12 +10,14 @@ import Error from '../error/Error'
 function Technology() {
   const {getNews, news, setPage, loading, error} = useContext(GetContext)
   const navigate = useNavigate()
+  
 
   setPage('technology')
   useEffect(() => {
-    getNews('technology')  
-    
+    getNews('technology') 
   }, [])
+
+  
 
   if (loading) {
     return (<Loading />)

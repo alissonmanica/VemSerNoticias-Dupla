@@ -17,7 +17,8 @@ async function getNews(url) {
     try {
         const {data} = await apiNews.get(`${url}.json?api-key=1ES0ENwBlE33z8G7aGIzIGoAgVekpGOU`);
         const {results} = data;
-        setNews(data.results);
+        const filtrado = results.filter((e) => e.title !== "")
+        setNews(filtrado);
         setLoading(false);
         setError(false)
     } catch (error) {
